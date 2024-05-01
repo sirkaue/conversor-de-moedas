@@ -30,36 +30,60 @@ public class CurrencyConverterApplication {
                 case 1:
                     System.out.println("Digite o valor para a conversão: ");
                     double brlToUsdValor = sc.nextDouble();
+                    if (brlToUsdValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto brlToUsd = apiService.getCurrency("BRL", "USD", brlToUsdValor);
                     System.out.println("Conversão de BRL para USD: " + brlToUsd.getConversionResult());
                     break;
                 case 2:
                     System.out.println("Digite o valor para a conversão: ");
                     double brlToEurValor = sc.nextDouble();
+                    if (brlToEurValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto brlToEur = apiService.getCurrency("BRL", "EUR", brlToEurValor);
                     System.out.println("Conversão de BRL para EUR: " + brlToEur.getConversionResult());
                     break;
                 case 3:
                     System.out.println("Digite o valor para a conversão: ");
                     double brlToGbpValor = sc.nextDouble();
+                    if (brlToGbpValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto brlToGbp = apiService.getCurrency("BRL", "GBP", brlToGbpValor);
                     System.out.println("Conversão de BRL para GBP: " + brlToGbp.getConversionResult());
                     break;
                 case 4:
                     System.out.println("Digite o valor para a conversão: ");
                     double gbpToUsdValor = sc.nextDouble();
+                    if (gbpToUsdValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto gbpToUsd = apiService.getCurrency("GBP", "USD", gbpToUsdValor);
                     System.out.println("Conversão de GBP para USD: " + gbpToUsd.getConversionResult());
                     break;
                 case 5:
                     System.out.println("Digite o valor para a conversão: ");
                     double gbpToEurValor = sc.nextDouble();
+                    if (gbpToEurValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto gbpToEur = apiService.getCurrency("GBP", "EUR", gbpToEurValor);
                     System.out.println("Conversão de GBP para EUR: " + gbpToEur.getConversionResult());
                     break;
                 case 6:
                     System.out.println("Digite o valor para a conversão: ");
                     double usdToEurValor = sc.nextDouble();
+                    if (usdToEurValor < 0) {
+                        System.out.println("Valor inválido! O valor não pode ser negativo.");
+                        return;
+                    }
                     CurrencyConverterDto usdToEur = apiService.getCurrency("USD", "EUR", usdToEurValor);
                     System.out.println("Conversão de USD para EUR: " + usdToEur.getConversionResult());
                     break;
