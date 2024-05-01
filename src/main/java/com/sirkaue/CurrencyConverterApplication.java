@@ -26,31 +26,41 @@ public class CurrencyConverterApplication {
 
         int opcao = sc.nextInt();
         try {
-            System.out.println("Digite o valor para a conversão: ");
-            double valor = sc.nextDouble();
             switch (opcao) {
                 case 1:
-                    CurrencyConverterDto brlToUsd = apiService.getCurrency("BRL", "USD", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double brlToUsdValor = sc.nextDouble();
+                    CurrencyConverterDto brlToUsd = apiService.getCurrency("BRL", "USD", brlToUsdValor);
                     System.out.println("Conversão de BRL para USD: " + brlToUsd.getConversionResult());
                     break;
                 case 2:
-                    CurrencyConverterDto brlToEur = apiService.getCurrency("BRL", "EUR", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double brlToEurValor = sc.nextDouble();
+                    CurrencyConverterDto brlToEur = apiService.getCurrency("BRL", "EUR", brlToEurValor);
                     System.out.println("Conversão de BRL para EUR: " + brlToEur.getConversionResult());
                     break;
                 case 3:
-                    CurrencyConverterDto brlToGbp = apiService.getCurrency("BRL", "GBP", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double brlToGbpValor = sc.nextDouble();
+                    CurrencyConverterDto brlToGbp = apiService.getCurrency("BRL", "GBP", brlToGbpValor);
                     System.out.println("Conversão de BRL para GBP: " + brlToGbp.getConversionResult());
                     break;
                 case 4:
-                    CurrencyConverterDto gbpToUsd = apiService.getCurrency("GBP", "USD", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double gbpToUsdValor = sc.nextDouble();
+                    CurrencyConverterDto gbpToUsd = apiService.getCurrency("GBP", "USD", gbpToUsdValor);
                     System.out.println("Conversão de GBP para USD: " + gbpToUsd.getConversionResult());
                     break;
                 case 5:
-                    CurrencyConverterDto gbpToEur = apiService.getCurrency("GBP", "EUR", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double gbpToEurValor = sc.nextDouble();
+                    CurrencyConverterDto gbpToEur = apiService.getCurrency("GBP", "EUR", gbpToEurValor);
                     System.out.println("Conversão de GBP para EUR: " + gbpToEur.getConversionResult());
                     break;
                 case 6:
-                    CurrencyConverterDto usdToEur = apiService.getCurrency("USD", "EUR", valor);
+                    System.out.println("Digite o valor para a conversão: ");
+                    double usdToEurValor = sc.nextDouble();
+                    CurrencyConverterDto usdToEur = apiService.getCurrency("USD", "EUR", usdToEurValor);
                     System.out.println("Conversão de USD para EUR: " + usdToEur.getConversionResult());
                     break;
                 case 0:
@@ -62,6 +72,8 @@ public class CurrencyConverterApplication {
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            sc.close();
         }
     }
 }
